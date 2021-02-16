@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using UserRoleAdmin.Models;
 
 namespace UserRoleAdmin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class RolesController : Controller
     {
         private RoleManager<IdentityRole> roleManager;

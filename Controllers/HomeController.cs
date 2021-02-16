@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using UserRoleAdmin.Models;
 using Microsoft.AspNetCore.Identity;
 
+
 namespace UserRoleAdmin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
